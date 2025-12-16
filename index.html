@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MATA: NEON PRIME ULTIMATE</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="intro-overlay">
+        <div class="matrix-bg" id="matrix-bg"></div>
+        <div class="scanlines"></div>
+        
+        <div class="intro-content">
+            <div class="logo-wrapper">
+                <div class="logo-glitch" data-text="U.P.S.I">U.P.S.I</div>
+                <div class="logo-sub">NEON PROTOCOL</div>
+            </div>
+            
+            <div class="cyber-loader">
+                <div class="ring"></div>
+                <div class="ring"></div>
+                <div class="ring"></div>
+                <span class="loading-text">LOADING</span>
+            </div>
+
+            <div class="boot-sequence">
+                <p id="boot-text">INITIALIZING SYSTEM...</p>
+            </div>
+
+            <button id="enter-btn" onclick="enterSystem()">
+                <span class="btn-text">AKSES SISTEM >></span>
+                <div class="btn-bg"></div>
+            </button>
+        </div>
+    </div>
+
+    <canvas id="neuro-network"></canvas>
+    
+    <div class="glass-container" id="main-interface">
+        
+        <aside class="sidebar">
+            <div class="profile-box">
+                <div class="avatar-glow">
+                    <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Prime" alt="Avatar">
+                </div>
+                <h3>EJEN PRIME</h3>
+                <p>STATUS: <span style="color:#00f3ff">ONLINE</span></p>
+            </div>
+
+            <nav class="nav-menu">
+                <button onclick="navTo('dashboard')" class="nav-item active" id="btn-dashboard">
+                    <span class="icon">🏠</span> DASHBOARD
+                </button>
+                <button onclick="navTo('academy')" class="nav-item" id="btn-academy">
+                    <span class="icon">📚</span> AKADEMI
+                </button>
+                <button onclick="navTo('video')" class="nav-item" id="btn-video">
+                    <span class="icon">🎬</span> TUTORIAL
+                </button>
+                <button onclick="navTo('game')" class="nav-item" id="btn-game">
+                    <span class="icon">🚀</span> MISI SIMULASI
+                </button>
+                <button onclick="navTo('cypher')" class="nav-item" id="btn-cypher">
+                    <span class="icon">🔐</span> ALAT SULIT
+                </button>
+                <button onclick="navTo('arena')" class="nav-item" id="btn-arena">
+                    <span class="icon">⚔️</span> ARENA KUIZ
+                </button>
+                <button onclick="navTo('notepad')" class="nav-item" id="btn-notepad">
+                    <span class="icon">📝</span> MEMO AGEN
+                </button>
+            </nav>
+            <div class="version-tag">SYS.VER. 10.0 NOTE-UPDATED</div>
+        </aside>
+
+        <main class="content-view">
+            
+            <section id="dashboard" class="panel active">
+                <div class="dash-header">
+                    <div>
+                        <h1>PANGKALAN UTAMA</h1>
+                        <p>Selamat kembali, Ejen. Sistem sedia.</p>
+                    </div>
+                    <div class="live-clock">
+                        <span id="time-display">00:00:00</span>
+                        <small>KUALA LUMPUR, MY</small>
+                    </div>
+                </div>
+
+                <div class="dashboard-layout">
+                    <div class="holo-card agent-id-card">
+                        <div class="id-top">
+                            <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Prime" class="id-photo">
+                            <div class="id-details">
+                                <h3>EJEN PRIME</h3>
+                                <p>ID: <span style="color:var(--neon-cyan)">89-X-GHOST</span></p>
+                                <p>LEVEL: <span style="color:var(--neon-purple)">ELIT</span></p>
+                            </div>
+                        </div>
+                        <div class="id-bottom">
+                            <div class="stat-mini"><small>IQ SCORE</small><b>145</b></div>
+                            <div class="stat-mini"><small>MISI</small><b>12/15</b></div>
+                        </div>
+                    </div>
+
+                    <div class="holo-card progress-circle-box">
+                        <h3>PRESTASI</h3>
+                        <div class="circle-chart" style="--perc:85%">
+                            <div class="inner-circle"><span>85%</span></div>
+                        </div>
+                        <p style="text-align:center; margin-top:10px; font-size:0.8rem; color:#888">MODUL SELESAI</p>
+                    </div>
+
+                    <div class="holo-card terminal-box">
+                        <h3>SYSTEM LOG</h3>
+                        <div class="log-content">
+                            <p>> Connecting to server...</p>
+                            <p>> Decrypting user data...</p>
+                            <p class="success">> Access Granted.</p>
+                            <p>> Fetching ASK modules...</p>
+                            <p class="warning">> Firewall: Active</p>
+                            <p>> Syncing neural network...</p>
+                            <p>> System ready.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="holo-card xp-banner">
+                    <div style="display:flex; justify-content:space-between;">
+                        <h3>SKOR KUIZ (XP)</h3>
+                        <h3 id="xp-display" style="color:var(--neon-cyan)">0 XP</h3>
+                    </div>
+                    <div class="xp-track"><div class="xp-fill"></div></div>
+                </div>
+            </section>
+
+            <section id="academy" class="panel">
+                <div class="section-title"><h2>PANGKALAN DATA PEMBELAJARAN</h2><div class="line"></div></div>
+
+                <div class="cards-grid" id="academy-grid">
+                    <div class="holo-card">
+                        <div class="card-icon">01</div>
+                        <h3>KONSEP ASAS</h3>
+                        <p>Pemikiran Komputasional & Teknik Penyelesaian Masalah.</p>
+                        <button class="read-btn" onclick="openFile('file-1')">BUKA FAIL >></button>
+                    </div>
+                    <div class="holo-card">
+                        <div class="card-icon">02</div>
+                        <h3>PERWAKILAN DATA</h3>
+                        <p>Kriptografi: Caesar Cipher, Enkripsi & Dekripsi.</p>
+                        <button class="read-btn" onclick="openFile('file-2')">BUKA FAIL >></button>
+                    </div>
+                    <div class="holo-card">
+                        <div class="card-icon">03</div>
+                        <h3>ALGORITMA</h3>
+                        <p>Search (Carian) & Sort (Isihan).</p>
+                        <button class="read-btn" onclick="openFile('file-3')">BUKA FAIL >></button>
+                    </div>
+                    <div class="holo-card">
+                        <div class="card-icon">04</div>
+                        <h3>KOD ARAHAN</h3>
+                        <p>Python: Pilihan, Ulangan & Fungsi Matematik.</p>
+                        <button class="read-btn" onclick="openFile('file-4')">BUKA FAIL >></button>
+                    </div>
+                </div>
+
+                <div id="academy-viewer" class="file-viewer hidden">
+                    <button class="back-btn" onclick="closeFile()"><< KEMBALI</button>
+                    
+                    <div id="file-1" class="file-content hidden">
+                        <h2 class="file-title">FAIL 01: PEMIKIRAN KOMPUTASIONAL</h2>
+                        <div class="note-box">
+                            <div class="concept-intro">
+                                <p><strong>DEFINISI:</strong> Pemikiran Komputasional adalah satu proses pemikiran bagi tujuan menyelesaikan masalah oleh manusia sendiri berbantukan mesin atau kedua-duanya sekali.</p>
+                            </div>
+
+                            <h4 class="section-header">1. EMPAT (4) TEKNIK ASAS</h4>
+                            <div class="concept-grid">
+                                <div class="concept-item">
+                                    <span class="c-icon">🧩</span>
+                                    <h5>LERAIAN (Decomposition)</h5>
+                                    <p>Memecahkan masalah yang besar dan kompleks kepada bahagian-bahagian kecil supaya lebih mudah diurus dan diselesaikan.</p>
+                                </div>
+                                <div class="concept-item">
+                                    <span class="c-icon">🔍</span>
+                                    <h5>PENGECAMAN CORAK (Pattern Recognition)</h5>
+                                    <p>Melihat dan mengenalpasti kesamaan atau ciri-ciri yang serupa antara masalah-masalah kecil yang telah dileraikan.</p>
+                                </div>
+                                <div class="concept-item">
+                                    <span class="c-icon">🚀</span>
+                                    <h5>PENISKALAAN (Abstraction)</h5>
+                                    <p>Menentukan aspek-aspek penting dalam sesuatu masalah dan meninggalkan aspek yang kurang penting (fokus pada solusi).</p>
+                                </div>
+                                <div class="concept-item">
+                                    <span class="c-icon">🏗️</span>
+                                    <h5>PENGITLAKAN (Generalisation)</h5>
+                                    <p>Membina model bagi menyelesaikan masalah yang diselesaikan boleh digunakan untuk menyelesaikan masalah lain yang serupa.</p>
+                                </div>
+                            </div>
+
+                            <h4 class="section-header">2. CONTOH SITUASI: MEMBINA RUMAH</h4>
+                            <div class="example-box">
+                                <ul>
+                                    <li><strong style="color:var(--neon-green)">Leraian:</strong> Jangan lihat rumah sebagai satu objek besar. Lihat komponennya: Bilik Tidur, Dapur, Bumbung, Tandas.</li>
+                                    <li><strong style="color:var(--neon-green)">Pengecaman Corak:</strong> Setiap bilik perlukan pintu, tingkap, dan lampu. Corak pembinaan yang sama boleh diulang.</li>
+                                    <li><strong style="color:var(--neon-green)">Peniskalaan:</strong> Fokus pada struktur dan ukuran dahulu. Abaikan warna cat atau jenis langsir buat masa ini.</li>
+                                    <li><strong style="color:var(--neon-green)">Pengitlakan:</strong> Lukis pelan lantai. Pelan ini boleh digunakan sebagai panduan (algoritma) oleh kontraktor.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="file-2" class="file-content hidden">
+                        <h2 class="file-title">FAIL 02: KRIPTOGRAFI</h2>
+                        <div class="note-box">
+                            <h4>ISTILAH PENTING:</h4>
+                            <ul>
+                                <li><strong>Plaintext:</strong> Teks asal yang boleh dibaca.</li>
+                                <li><strong>Ciphertext:</strong> Teks yang telah disulitkan (tidak boleh dibaca).</li>
+                                <li><strong>Caesar Cipher:</strong> Teknik anjakan huruf (Contoh: A -> C jika kunci adalah 2).</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="file-3" class="file-content hidden">
+                        <h2 class="file-title">FAIL 03: ALGORITMA</h2>
+                        <div class="note-box">
+                            <h4>CARIAN (SEARCH):</h4>
+                            <p>Linear (Satu per satu) vs Binary (Bahagi dua - Data mesti urut).</p>
+                            <h4>ISIHAN (SORT):</h4>
+                            <p>Bubble (Banding sebelah) vs Bucket (Asing dalam baldi).</p>
+                        </div>
+                    </div>
+                    <div id="file-4" class="file-content hidden">
+                        <h2 class="file-title">FAIL 04: PYTHON</h2>
+                        <div class="note-box">
+                            <pre class="code-block">
+import math
+print(math.sqrt(16)) # Output: 4.0
+print(math.pi)       # Output: 3.142...
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="video" class="panel">
+                <div class="section-title"><h2>BILIK TAYANGAN (TUTORIAL)</h2><div class="line"></div></div>
+                <div class="video-grid">
+                    
+                    <div class="video-card">
+                        <div class="video-frame">
+                            <img src="https://img.youtube.com/vi/svMtTifveMI/hqdefault.jpg" class="preview-bg" alt="SQL Tutorial">
+                            <div class="icon-overlay">▶</div>
+                        </div>
+                        <div class="video-info">
+                            <span class="tag" style="background:var(--neon-green); color:black;">BAB 5 (BARU)</span>
+                            <h3>PANGKALAN DATA & SQL</h3>
+                            <button class="launch-btn" style="margin-top:10px;" onclick="window.open('https://youtu.be/svMtTifveMI?si=ISrelULemRdfF1Fz', '_blank')">
+                                TONTON DI YOUTUBE >>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="video-card">
+                        <div class="video-frame">
+                            <img src="https://img.youtube.com/vi/S_C7zfknyag/hqdefault.jpg" class="preview-bg" alt="Bab 1">
+                            <div class="icon-overlay">▶</div>
+                        </div>
+                        <div class="video-info">
+                            <span class="tag">BAB 1</span>
+                            <h3>PEMIKIRAN KOMPUTASIONAL</h3>
+                            <button class="launch-btn" style="margin-top:10px;" onclick="window.open('https://www.youtube.com/watch?v=S_C7zfknyag', '_blank')">
+                                TONTON DI YOUTUBE >>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="video-card">
+                        <div class="video-frame">
+                            <img src="https://img.youtube.com/vi/sMOZf4GN3oc/hqdefault.jpg" class="preview-bg" alt="Bab 2">
+                            <div class="icon-overlay">▶</div>
+                        </div>
+                        <div class="video-info">
+                            <span class="tag">BAB 2</span>
+                            <h3>KRIPTOGRAFI</h3>
+                            <button class="launch-btn" style="margin-top:10px;" onclick="window.open('https://www.youtube.com/watch?v=sMOZf4GN3oc', '_blank')">
+                                TONTON DI YOUTUBE >>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="video-card">
+                        <div class="video-frame">
+                            <img src="https://img.youtube.com/vi/NFetSCJcnKQ/hqdefault.jpg" class="preview-bg" alt="Bab 3">
+                            <div class="icon-overlay">▶</div>
+                        </div>
+                        <div class="video-info">
+                            <span class="tag">BAB 3</span>
+                            <h3>ALGORITMA SEARCH & SORT</h3>
+                            <button class="launch-btn" style="margin-top:10px;" onclick="window.open('https://www.youtube.com/watch?v=NFetSCJcnKQ', '_blank')">
+                                TONTON DI YOUTUBE >>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="video-card">
+                        <div class="video-frame">
+                            <img src="https://img.youtube.com/vi/Z1Yd7upQsXY/hqdefault.jpg" class="preview-bg" alt="Bab 4">
+                            <div class="icon-overlay">▶</div>
+                        </div>
+                        <div class="video-info">
+                            <span class="tag">BAB 4</span>
+                            <h3>ASAS PYTHON</h3>
+                            <button class="launch-btn" style="margin-top:10px;" onclick="window.open('https://www.youtube.com/watch?v=Z1Yd7upQsXY', '_blank')">
+                                TONTON DI YOUTUBE >>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="game" class="panel">
+                <div class="section-title"><h2>MISI SIMULASI (LAUNCHER)</h2><div class="line"></div></div>
+                <div class="game-grid">
+                    
+                    <div class="game-card">
+                        <div class="game-preview standby-anim">
+                            <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=600&auto=format&fit=crop" class="preview-bg" alt="Zep Battle">
+                            <div class="icon-play">🚀</div>
+                            <div class="status-text">STATUS: READY</div>
+                        </div>
+                        <div class="game-info">
+                            <span class="tag" style="background:#ff0055; color:white;">MISI UTAMA</span>
+                            <h3>ZEP BATTLE SIMULATION</h3>
+                            <p class="mission-desc">Simulasi pertempuran siber. Selesaikan kuiz untuk menang.</p>
+                            <button class="launch-btn" onclick="window.open('https://quiz.zep.us/en/play/OvJjx9', '_blank')">
+                                [ KLIK UNTUK MULA ] >>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="game-card">
+                        <div class="game-preview">
+                            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=600&auto=format&fit=crop" class="preview-bg" alt="Hacker">
+                            <div class="icon-play">🕵️</div>
+                        </div>
+                        <div class="game-info">
+                            <span class="tag" style="background:#00f3ff; color:black;">MISI 01</span>
+                            <h3>PENGINTIPAN SIBER</h3>
+                            <p class="mission-desc">Cari maklumat rahsia dalam pangkalan data musuh.</p>
+                            <button class="launch-btn" onclick="window.open('#', '_blank')">
+                                BUKA FAIL >>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="game-card">
+                        <div class="game-preview">
+                            <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=600&auto=format&fit=crop" class="preview-bg" alt="Decryption">
+                            <div class="icon-play">🔓</div>
+                        </div>
+                        <div class="game-info">
+                            <span class="tag" style="background:#00f3ff; color:black;">MISI 02</span>
+                            <h3>PENYAHKOD RAHSIA</h3>
+                            <p class="mission-desc">Dekripsi kod rahsia menggunakan teknik Caesar Cipher.</p>
+                            <button class="launch-btn" onclick="window.open('#', '_blank')">
+                                BUKA FAIL >>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="game-card">
+                        <div class="game-preview">
+                            <img src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?q=80&w=600&auto=format&fit=crop" class="preview-bg" alt="Virus">
+                            <div class="icon-play">🦠</div>
+                        </div>
+                        <div class="game-info">
+                            <span class="tag" style="background:#00f3ff; color:black;">MISI 03</span>
+                            <h3>SERANGAN VIRUS</h3>
+                            <p class="mission-desc">Hentikan penyebaran virus sebelum sistem lumpuh.</p>
+                            <button class="launch-btn" onclick="window.open('#', '_blank')">
+                                BUKA FAIL >>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="cypher" class="panel">
+                <div class="section-title"><h2>ENKRIPSI DATA</h2><div class="line"></div></div>
+                <div class="cypher-interface">
+                    <div class="input-zone"><label>INPUT TEKS</label><input type="text" id="inputMsg" placeholder="Taip mesej..."></div>
+                    <div class="input-zone"><label>KUNCI (SHIFT)</label><input type="number" id="shiftKey" value="3"></div>
+                    <button onclick="encrypt()" class="glow-btn">LAKUKAN PENYULITAN</button>
+                    <div class="output-zone"><small>OUTPUT:</small><h3 id="outputResult">...</h3></div>
+                </div>
+            </section>
+
+            <section id="arena" class="panel">
+                <div class="section-title"><h2>SIMULASI TEMPUR (10 SOALAN)</h2><div class="line"></div></div>
+                <div class="quiz-scroll-area">
+                    <div class="quiz-box"><div class="q-header">SOALAN 01</div><h3>Antara berikut, yang manakah teknik isihan?</h3><div class="options"><button onclick="check(this, true)">Bubble Sort</button><button onclick="check(this, false)">Linear Search</button><button onclick="check(this, false)">Binary Code</button></div></div>
+                    <div class="quiz-box"><div class="q-header">SOALAN 02</div><h3>Tujuan utama Kriptografi?</h3><div class="options"><button onclick="check(this, false)">Padam data</button><button onclick="check(this, true)">Kerahsiaan</button><button onclick="check(this, false)">Laju PC</button></div></div>
+                    <div class="quiz-box"><div class="q-header">SOALAN 03</div><h3>Simbol komen Python?</h3><div class="options"><button onclick="check(this, false)">//</button><button onclick="check(this, false)">/**/</button><button onclick="check(this, true)">#</button></div></div>
+                    <div class="quiz-box"><div class="q-header">SOALAN 04</div><h3>Output math.pow(2,3)?</h3><div class="options"><button onclick="check(this, true)">8.0</button><button onclick="check(this, false)">6.0</button><button onclick="check(this, false)">9.0</button></div></div>
+                    <div class="quiz-box"><div class="q-header">SOALAN 05</div><h3>Syarat Binary Search?</h3><div class="options"><button onclick="check(this, false)">Rawak</button><button onclick="check(this, true)">Diisih (Sorted)</button><button onclick="check(this, false)">Teks</button></div></div>
+                    <div class="quiz-box"><div class="q-header">SOALAN 06</div><h3>Mengecam ciri persamaan?</h3><div class="options"><button onclick="check(this, false)">Leraian</button><button onclick="check(this, false)">Peniskalaan</button><button onclick="check(this, true)">Corak</button></div></div>
+                    <div class="quiz-box"><div class="q-header">SOALAN 07</div><h3>Output print(10 % 3)?</h3><div class="options"><button onclick="check(this, true)">1</button><button onclick="check(this, false)">3</button><button onclick="check(this, false)">3.33</button></div></div>
+                    <div class="quiz-box"><div class="q-header">SOALAN 08</div><h3>Caesar Shift 1, A jadi?</h3><div class="options"><button onclick="check(this, false)">Z</button><button onclick="check(this, true)">B</button><button onclick="check(this, false)">C</button></div></div>
+                    <div class="quiz-box"><div class="q-header">SOALAN 09</div><h3>1 Byte bersamaan?</h3><div class="options"><button onclick="check(this, false)">4 Bit</button><button onclick="check(this, true)">8 Bit</button><button onclick="check(this, false)">16 Bit</button></div></div>
+                    <div class="quiz-box"><div class="q-header">SOALAN 10</div><h3>Fungsi punca kuasa dua?</h3><div class="options"><button onclick="check(this, true)">math.sqrt()</button><button onclick="check(this, false)">square()</button><button onclick="check(this, false)">pow()</button></div></div>
+                </div>
+            </section>
+
+            <section id="notepad" class="panel">
+                <div class="section-title"><h2>MEMO PERIBADI AGEN</h2><div class="line"></div></div>
+                <div class="notepad-grid">
+                    <div class="notepad-column input-column">
+                        <div class="column-header">
+                            <span>>> INPUT LOG BARU</span>
+                            <span id="lastUpdateDisplay" class="update-tag">OFFLINE</span>
+                        </div>
+                        <div class="input-wrapper">
+                            <textarea id="userNotes" placeholder="Taip laporan misi di sini..."></textarea>
+                            <div class="note-controls">
+                                <button class="glow-btn small-btn" onclick="addLog()">💾 SIMPAN LOG</button>
+                                <button class="glow-btn delete-btn small-btn" onclick="clearAllLogs()">🗑️ PADAM SEMUA</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="notepad-column history-column">
+                        <div class="column-header">>> SEJARAH REKOD</div>
+                        <div id="logList" class="log-list-container">
+                            <div class="empty-state">TIADA DATA DISIMPAN</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        // --- 1. SETUP AWAL (ON LOAD) ---
+        window.onload = () => {
+            initMatrixEffect();
+            initBootSequence();
+            
+            // Setup Data & UI
+            renderLogs();
+            loadLastUpdate();
+            setInterval(updateTime, 1000);
+            updateTime();
+        };
+
+        // --- 2. INTRO ANIMATION (MATRIX & BOOT) ---
+        function initMatrixEffect() {
+            const matrixContainer = document.getElementById('matrix-bg');
+            setInterval(() => {
+                const line = document.createElement('div');
+                line.style.position = 'absolute';
+                line.style.left = Math.random() * 100 + 'vw';
+                line.style.top = Math.random() * 100 + 'vh';
+                line.style.fontSize = (Math.random() * 10 + 10) + 'px';
+                line.style.opacity = Math.random();
+                line.style.color = '#00f3ff';
+                line.style.fontFamily = 'monospace';
+                line.innerText = Math.random().toString(36).substring(7).toUpperCase();
+                
+                matrixContainer.appendChild(line);
+                
+                let pos = parseFloat(line.style.top);
+                const speed = Math.random() * 3 + 2;
+                
+                const fall = setInterval(() => {
+                    pos += speed;
+                    line.style.top = pos + 'px';
+                    if(pos > window.innerHeight) {
+                        clearInterval(fall);
+                        line.remove();
+                    }
+                }, 20);
+            }, 80);
+        }
+
+        function initBootSequence() {
+            const bootText = document.getElementById('boot-text');
+            const logs = [
+                "LOADING KERNEL...", 
+                "BYPASSING FIREWALL...", 
+                "CONNECTING NEURAL NET...", 
+                "DECRYPTING USER DATA...",
+                "ACCESS GRANTED."
+            ];
+            let logIndex = 0;
+            
+            function typeLog() {
+                if(logIndex < logs.length) {
+                    let currentTxt = logs[logIndex];
+                    bootText.innerText = "> " + currentTxt;
+                    bootText.style.color = (logIndex === logs.length - 1) ? "#00f3ff" : "#0aff0a";
+                    bootText.style.transform = `translateX(${Math.random()*2}px)`;
+                    logIndex++;
+                    setTimeout(typeLog, 700); 
+                } else {
+                    document.getElementById('enter-btn').style.opacity = '1';
+                    document.getElementById('enter-btn').style.pointerEvents = 'all';
+                    document.querySelector('.loading-text').innerText = "READY";
+                }
+            }
+            typeLog();
+        }
+
+        // --- 3. NAVIGASI UTAMA ---
+        function enterSystem() {
+            document.getElementById('intro-overlay').style.top = '-100%';
+            setTimeout(() => {
+                document.getElementById('main-interface').style.opacity = '1';
+                document.getElementById('main-interface').style.transform = 'translate(-50%, -50%) scale(1)';
+            }, 500);
+        }
+
+        function navTo(id) {
+            document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            document.getElementById('btn-' + id).classList.add('active');
+        }
+
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('time-display').innerText = now.toLocaleTimeString('en-US', {hour12:false});
+        }
+
+        // --- 4. AKADEMI (FILE VIEWER) ---
+        function openFile(fileId) {
+            document.getElementById('academy-grid').style.display = 'none';
+            document.getElementById('academy-viewer').classList.remove('hidden');
+            document.querySelectorAll('.file-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById(fileId).classList.remove('hidden');
+        }
+        function closeFile() {
+            document.getElementById('academy-viewer').classList.add('hidden');
+            const grid = document.getElementById('academy-grid');
+            grid.style.display = 'grid'; grid.style.animation = 'fadeIn 0.5s';
+        }
+
+        // --- 5. ALAT SULIT (ENKRIPSI) ---
+        function encrypt() {
+            let text = document.getElementById('inputMsg').value.toUpperCase();
+            let shift = parseInt(document.getElementById('shiftKey').value);
+            let result = "";
+            for(let i=0; i<text.length; i++){
+                let code = text.charCodeAt(i);
+                if(code >= 65 && code <= 90) {
+                    result += String.fromCharCode(((code - 65 + shift) % 26) + 65);
+                } else result += text[i];
+            }
+            document.getElementById('outputResult').innerText = result;
+        }
+
+        // --- 6. ARENA KUIZ (LOGIK) ---
+        let totalScore = 0;
+        function check(btn, isCorrect) {
+            const parent = btn.closest('.quiz-box'); 
+            const buttons = parent.querySelectorAll('button');
+
+            buttons.forEach(b => { 
+                b.disabled = true; 
+                if(b !== btn) b.style.opacity = '0.3'; 
+            });
+
+            if(isCorrect) {
+                parent.classList.add('correct-anim'); 
+                btn.innerHTML = "✅ TEPAT! <small>(+100 XP)</small>";
+                btn.classList.add('btn-correct');
+                totalScore += 100;
+                const xpDisplay = document.getElementById('xp-display');
+                xpDisplay.innerText = totalScore + " XP";
+                xpDisplay.style.transform = "scale(1.5)";
+                setTimeout(()=> xpDisplay.style.transform = "scale(1)", 300);
+            } else {
+                parent.classList.add('wrong-anim');
+                btn.innerHTML = "❌ RALAT!";
+                btn.classList.add('btn-wrong');
+            }
+        }
+
+        // --- 7. NOTEPAD SYSTEM (LOCAL STORAGE) ---
+        function getLogs() {
+            const logs = localStorage.getItem('mataLogs');
+            return logs ? JSON.parse(logs) : [];
+        }
+        function addLog() {
+            const text = document.getElementById('userNotes').value.trim();
+            if(!text) return alert("Sila masukkan nota dahulu.");
+            const now = new Date();
+            const timeString = now.toLocaleDateString() + " " + now.toLocaleTimeString();
+            const newLog = { id: Date.now(), content: text, time: timeString };
+            const logs = getLogs();
+            logs.unshift(newLog);
+            localStorage.setItem('mataLogs', JSON.stringify(logs));
+            localStorage.setItem('mataLastUpdate', timeString);
+            updateLastUpdateDisplay(timeString);
+            document.getElementById('userNotes').value = "";
+            renderLogs();
+        }
+        function deleteLog(id) {
+            if(confirm("Padam log ini?")) {
+                let logs = getLogs();
+                logs = logs.filter(log => log.id !== id);
+                localStorage.setItem('mataLogs', JSON.stringify(logs));
+                renderLogs();
+            }
+        }
+        function clearAllLogs() {
+            if(confirm("Padam SEMUA sejarah?")) {
+                localStorage.removeItem('mataLogs');
+                localStorage.removeItem('mataLastUpdate');
+                document.getElementById('lastUpdateDisplay').innerText = "TIADA REKOD";
+                renderLogs();
+            }
+        }
+        function renderLogs() {
+            const logs = getLogs();
+            const listContainer = document.getElementById('logList');
+            if(logs.length === 0) {
+                listContainer.innerHTML = '<div class="empty-state">TIADA DATA DISIMPAN</div>';
+                return;
+            }
+            let html = '';
+            logs.forEach(log => {
+                html += `
+                    <div class="log-card">
+                        <div class="log-top">
+                            <span class="log-time">${log.time}</span>
+                            <button class="del-icon" onclick="deleteLog(${log.id})">×</button>
+                        </div>
+                        <div class="log-text">${log.content.replace(/\n/g, '<br>')}</div>
+                    </div>
+                `;
+            });
+            listContainer.innerHTML = html;
+        }
+        function loadLastUpdate() {
+            const lastTime = localStorage.getItem('mataLastUpdate');
+            if(lastTime) updateLastUpdateDisplay(lastTime);
+        }
+        function updateLastUpdateDisplay(timeStr) {
+            document.getElementById('lastUpdateDisplay').innerText = "LAST: " + timeStr;
+            document.getElementById('lastUpdateDisplay').style.color = "var(--neon-purple)";
+        }
+
+        // --- 8. LATAR BELAKANG PARTICLE (CANVAS) ---
+        const canvas = document.getElementById('neuro-network');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+        let particlesArray;
+        
+        class Particle {
+            constructor(x, y, dX, dY, size) {
+                this.x = x; this.y = y; this.dX = dX; this.dY = dY; this.size = size;
+            }
+            draw() { ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI*2); ctx.fillStyle = '#00f3ff'; ctx.fill(); }
+            update() {
+                if(this.x > canvas.width || this.x < 0) this.dX = -this.dX;
+                if(this.y > canvas.height || this.y < 0) this.dY = -this.dY;
+                this.x += this.dX; this.y += this.dY; this.draw();
+            }
+        }
+        
+        function initCanvas() {
+            particlesArray = [];
+            let n = (canvas.height * canvas.width) / 9000;
+            for(let i=0; i<n; i++) {
+                let size = (Math.random()*2)+1;
+                let x = Math.random() * canvas.width; let y = Math.random() * canvas.height;
+                particlesArray.push(new Particle(x, y, (Math.random()-0.5), (Math.random()-0.5), size));
+            }
+        }
+        
+        function connectParticles() {
+            for(let a=0; a<particlesArray.length; a++) {
+                for(let b=a; b<particlesArray.length; b++) {
+                    let dx = particlesArray[a].x - particlesArray[b].x; let dy = particlesArray[a].y - particlesArray[b].y;
+                    let dist = dx*dx + dy*dy;
+                    if(dist < (canvas.width/7)*(canvas.height/7)) {
+                        ctx.strokeStyle = `rgba(0, 243, 255, ${1 - dist/20000})`;
+                        ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(particlesArray[a].x, particlesArray[a].y); ctx.lineTo(particlesArray[b].x, particlesArray[b].y); ctx.stroke();
+                    }
+                }
+            }
+        }
+        
+        function animateCanvas() { 
+            requestAnimationFrame(animateCanvas); 
+            ctx.clearRect(0,0,innerWidth,innerHeight); 
+            for(let i=0; i<particlesArray.length; i++) particlesArray[i].update(); 
+            connectParticles(); 
+        }
+        
+        window.addEventListener('resize', ()=>{ canvas.width=innerWidth; canvas.height=innerHeight; initCanvas(); });
+        initCanvas(); 
+        animateCanvas();
+    </script>
+</body>
+</html>
