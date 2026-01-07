@@ -1,105 +1,9 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="ms">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MATA | Agent Dashboard</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
-</head>
-<body>
-
-    <audio id="bgm" loop>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3" type="audio/mpeg">
-    </audio>
-    <audio id="sfx-click"><source src="https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3" type="audio/mpeg"></audio>
-    <audio id="sfx-hover"><source src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3" type="audio/mpeg"></audio>
-    <audio id="sfx-access"><source src="https://assets.mixkit.co/active_storage/sfx/2578/2578-preview.mp3" type="audio/mpeg"></audio>
-
-    <div id="intro-overlay">
-        <div class="matrix-bg"></div>
-        <div class="scanlines"></div>
-        <div class="intro-content">
-            <div class="logo-wrapper">
-                <div class="logo-glitch" data-text="M.A.T.A">M.A.T.A</div>
-                <div class="logo-sub">NEURAL INTERFACE SYSTEM</div>
-            </div>
-            
-            <div class="cyber-loader">
-                <div class="ring"></div>
-                <div class="ring"></div>
-                <div class="ring"></div>
-                <span class="loading-text">SCANNING...</span>
-            </div>
-
-            <div id="boot-text">Initializing Secure Connection...</div>
-            <button id="enter-btn">Initialize Access<div class="btn-bg"></div></button>
-        </div>
-    </div>
-
-    <div class="glass-container">
-        <aside class="sidebar">
-            <div class="profile-box">
-                <div class="avatar-glow">
-                    <img src="https://via.placeholder.com/100" alt="Agent">
-                </div>
-                <h3>EJEN ALI</h3>
-            </div>
-            <nav class="nav-menu">
-                <button class="nav-item active">DASHBOARD</button>
-                <button class="nav-item">MISSIONS</button>
-                <button class="nav-item">ACADEMY</button>
-                <button class="nav-item">SETTINGS</button>
-            </nav>
-            <div class="version-tag">VER 4.0.2 - MATA OS</div>
-        </aside>
-
-        <main class="content-view">
-            <header class="dash-header">
-                <h1>WELCOME, AGENT</h1>
-                <div id="time-display">00:00:00</div>
-            </header>
-
-            <div class="dashboard-layout">
-                <div class="holo-card agent-id-card">
-                    <div class="id-top">
-                        <div class="id-details">
-                            <h3>AGENT ID: 013</h3>
-                            <p>Rank: Invisto</p>
-                        </div>
-                    </div>
-                    <div class="id-bottom">
-                        <div class="stat-mini"><b>STRENGTH</b> 85%</div>
-                        <div class="stat-mini"><b>INTEL</b> 92%</div>
-                    </div>
-                </div>
-
-                <div class="holo-card">
-                    <h3>SYSTEM STATUS</h3>
-                    <div class="xp-track"><div class="xp-fill"></div></div>
-                </div>
-
-                <div class="holo-card terminal-box">
-                    <h3>LIVE LOGS</h3>
-                    <div class="log-content">
-                        <p class="success">> Connection Secure</p>
-                        <p>> Analyzing Data...</p>
-                        <p class="warning">> Threat Detected!</p>
-                    </div>
-                </div>
-            </div>
-        </main>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
-<html lang="ms">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UPSI: MARBEL PRIME ULTIMATE</title>
+    <title>MATA: NEON PRIME ULTIMATE</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
     
@@ -114,7 +18,7 @@
         <div class="intro-content">
             <div class="logo-wrapper">
                 <div class="logo-glitch" data-text="U.P.S.I">U.P.S.I</div>
-                <div class="logo-sub">MARBEL PROTOCOL</div>
+                <div class="logo-sub">NEON PROTOCOL</div>
             </div>
             
             <div class="cyber-loader">
@@ -162,7 +66,7 @@
                     <span class="icon">🚀</span> MISI SIMULASI
                 </button>
                 <button onclick="navTo('cypher')" class="nav-item" id="btn-cypher">
-                    <span class="icon">🔐</span> ALAT RAHSIA
+                    <span class="icon">🔐</span> ALAT SULIT
                 </button>
                 <button onclick="navTo('arena')" class="nav-item" id="btn-arena">
                     <span class="icon">⚔️</span> ARENA KUIZ
@@ -236,112 +140,134 @@
             </section>
 
             <section id="academy" class="panel">
-                <div class="section-title"><h2>PANGKALAN DATA PEMBELAJARAN</h2><div class="line"></div></div>
+    <div class="section-title">
+        <h2>PANGKALAN DATA PEMBELAJARAN (BERPANDUKAN DSKP ASK T3)</h2>
+        <div class="line"></div>
+    </div>
 
-                <div class="cards-grid" id="academy-grid">
-                    <div class="holo-card">
-                        <div class="card-icon">01</div>
-                        <h3>KONSEP ASAS</h3>
-                        <p>Pemikiran Komputasional & Teknik Penyelesaian Masalah.</p>
-                        <button class="read-btn" onclick="openFile('file-1')">BUKA FAIL >></button>
-                    </div>
-                    <div class="holo-card">
-                        <div class="card-icon">02</div>
-                        <h3>PERWAKILAN DATA</h3>
-                        <p>Kriptografi: Caesar Cipher, Enkripsi & Dekripsi.</p>
-                        <button class="read-btn" onclick="openFile('file-2')">BUKA FAIL >></button>
-                    </div>
-                    <div class="holo-card">
-                        <div class="card-icon">03</div>
-                        <h3>ALGORITMA</h3>
-                        <p>Search (Carian) & Sort (Isihan).</p>
-                        <button class="read-btn" onclick="openFile('file-3')">BUKA FAIL >></button>
-                    </div>
-                    <div class="holo-card">
-                        <div class="card-icon">04</div>
-                        <h3>KOD ARAHAN</h3>
-                        <p>Python: Pilihan, Ulangan & Fungsi Matematik.</p>
-                        <button class="read-btn" onclick="openFile('file-4')">BUKA FAIL >></button>
-                    </div>
-                </div>
+    <div class="cards-grid" id="academy-grid">
+        <div class="holo-card">
+            <div class="card-icon">1.0</div>
+            <h3>PEMBANGUNAN ATUR CARA</h3>
+            <p>Aplikasi Teknik Pemikiran Komputasional dalam SDLC & Penyahpepijatan.</p>
+            <button class="read-btn" onclick="openFile('file-1')">BUKA MODUL >></button>
+        </div>
+        <div class="holo-card">
+            <div class="card-icon">2.0</div>
+            <h3>KRIPTOGRAFI</h3>
+            <p>Penyulitan data menggunakan Sifer Substitusi & Transposisi.</p>
+            <button class="read-btn" onclick="openFile('file-2')">BUKA MODUL >></button>
+        </div>
+        <div class="holo-card">
+            <div class="card-icon">3.0</div>
+            <h3>ALGORITMA</h3>
+            <p>Analisis Search & Sort serta pengesan ralat dalam algoritma.</p>
+            <button class="read-btn" onclick="openFile('file-3')">BUKA MODUL >></button>
+        </div>
+        <div class="holo-card">
+            <div class="card-icon">4.0</div>
+            <h3>PANGKALAN DATA & SQL</h3>
+            <p>Pangkalan Data Hubungan, Normalisasi, dan Manipulasi Data (SQL).</p>
+            <button class="read-btn" onclick="openFile('file-4')">BUKA MODUL >></button>
+        </div>
+    </div>
 
-                <div id="academy-viewer" class="file-viewer hidden">
-                    <button class="back-btn" onclick="closeFile()"><< KEMBALI</button>
-                    
-                    <div id="file-1" class="file-content hidden">
-                        <h2 class="file-title">FAIL 01: PEMIKIRAN KOMPUTASIONAL</h2>
-                        <div class="note-box">
-                            <div class="concept-intro">
-                                <p><strong>DEFINISI:</strong> Pemikiran Komputasional adalah satu proses pemikiran bagi tujuan menyelesaikan masalah oleh manusia sendiri berbantukan mesin atau kedua-duanya sekali.</p>
-                            </div>
+    <div id="academy-viewer" class="file-viewer hidden">
+        <button class="back-btn" onclick="closeFile()"><< KEMBALI KE SENARAI MODUL</button>
 
-                            <h4 class="section-header">1. EMPAT (4) TEKNIK ASAS</h4>
-                            <div class="concept-grid">
-                                <div class="concept-item">
-                                    <span class="c-icon">🧩</span>
-                                    <h5>LERAIAN (Decomposition)</h5>
-                                    <p>Memecahkan masalah yang besar dan kompleks kepada bahagian-bahagian kecil supaya lebih mudah diurus dan diselesaikan.</p>
-                                </div>
-                                <div class="concept-item">
-                                    <span class="c-icon">🔍</span>
-                                    <h5>PENGECAMAN CORAK (Pattern Recognition)</h5>
-                                    <p>Melihat dan mengenalpasti kesamaan atau ciri-ciri yang serupa antara masalah-masalah kecil yang telah dileraikan.</p>
-                                </div>
-                                <div class="concept-item">
-                                    <span class="c-icon">🚀</span>
-                                    <h5>PENISKALAAN (Abstraction)</h5>
-                                    <p>Menentukan aspek-aspek penting dalam sesuatu masalah dan meninggalkan aspek yang kurang penting (fokus pada solusi).</p>
-                                </div>
-                                <div class="concept-item">
-                                    <span class="c-icon">🏗️</span>
-                                    <h5>PENGITLAKAN (Generalisation)</h5>
-                                    <p>Membina model bagi menyelesaikan masalah yang diselesaikan boleh digunakan untuk menyelesaikan masalah lain yang serupa.</p>
-                                </div>
-                            </div>
+        <div id="file-1" class="file-content hidden">
+            <h2 class="file-title">MODUL 1.0: KONSEP PEMBANGUNAN ATUR CARA</h2>
+            <div class="note-box">
+                <h4 class="section-header">1.1 FASA PEMBANGUNAN (SDLC)</h4>
+                
+                <ul>
+                    <li><strong>Fasa 1: Analisis Masalah</strong> - Menentukan Input, Proses, Output (IPO).</li>
+                    <li><strong>Fasa 2: Reka Bentuk Atur Cara</strong> - Menulis Pseudokod & lukis Carta Alir.</li>
+                    <li><strong>Fasa 3: Pengekodan</strong> - Menukarkan algoritma kepada bahasa Python.</li>
+                    <li><strong>Fasa 4: Pengujian & Penyahpepijatan</strong> - Mengesan ralat (Sintaks, Logik, Masa Larian).</li>
+                    <li><strong>Fasa 5: Dokumentasi</strong> - Menyediakan Dokumen Dalaman & Luaran.</li>
+                </ul>
+            </div>
+        </div>
 
-                            <h4 class="section-header">2. CONTOH SITUASI: MEMBINA RUMAH</h4>
-                            <div class="example-box">
-                                <ul>
-                                    <li><strong style="color:var(--neon-green)">Leraian:</strong> Jangan lihat rumah sebagai satu objek besar. Lihat komponennya: Bilik Tidur, Dapur, Bumbung, Tandas.</li>
-                                    <li><strong style="color:var(--neon-green)">Pengecaman Corak:</strong> Setiap bilik perlukan pintu, tingkap, dan lampu. Corak pembinaan yang sama boleh diulang.</li>
-                                    <li><strong style="color:var(--neon-green)">Peniskalaan:</strong> Fokus pada struktur dan ukuran dahulu. Abaikan warna cat atau jenis langsir buat masa ini.</li>
-                                    <li><strong style="color:var(--neon-green)">Pengitlakan:</strong> Lukis pelan lantai. Pelan ini boleh digunakan sebagai panduan (algoritma) oleh kontraktor.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+        <div id="file-2" class="file-content hidden">
+            <h2 class="file-title">MODUL 2.0: KRIPTOGRAFI DALAM KESELAMATAN DATA</h2>
+            <div class="note-box">
+                <h4 class="section-header">2.1 KAEDAH SIFER (CIPHER)</h4>
+                <p>Kriptografi melindungi data melalui proses <strong>Enkripsi</strong> (Teks Biasa ke Teks Sifer) dan <strong>Dekripsi</strong> (Teks Sifer ke Teks Biasa).</p>
+                
+                <table border="1" style="width:100%; border-collapse: collapse; margin-top:10px;">
+                    <tr style="background: var(--neon-blue);">
+                        <th>Kategori</th>
+                        <th>Jenis Sifer</th>
+                        <th>Cara Berfungsi</th>
+                    </tr>
+                    <tr>
+                        <td>Substitusi</td>
+                        <td>Caesar & Pigpen</td>
+                        <td>Menggantikan abjad/simbol dengan yang lain.</td>
+                    </tr>
+                    <tr>
+                        <td>Transposisi</td>
+                        <td>Rail Fence & Columnar</td>
+                        <td>Menyusun semula kedudukan abjad asal.</td>
+                    </tr>
+                </table>
+                
+            </div>
+        </div>
 
-                    <div id="file-2" class="file-content hidden">
-                        <h2 class="file-title">FAIL 02: KRIPTOGRAFI</h2>
-                        <div class="note-box">
-                            <h4>ISTILAH PENTING:</h4>
-                            <ul>
-                                <li><strong>Plaintext:</strong> Teks asal yang boleh dibaca.</li>
-                                <li><strong>Ciphertext:</strong> Teks yang telah disulitkan (tidak boleh dibaca).</li>
-                                <li><strong>Caesar Cipher:</strong> Teknik anjakan huruf (Contoh: A -> C jika kunci adalah 2).</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div id="file-3" class="file-content hidden">
-                        <h2 class="file-title">FAIL 03: ALGORITMA</h2>
-                        <div class="note-box">
-                            <h4>CARIAN (SEARCH):</h4>
-                            <p>Linear (Satu per satu) vs Binary (Bahagi dua - Data mesti urut).</p>
-                            <h4>ISIHAN (SORT):</h4>
-                            <p>Bubble (Banding sebelah) vs Bucket (Asing dalam baldi).</p>
-                        </div>
-                    </div>
-                    <div id="file-4" class="file-content hidden">
-                        <h2 class="file-title">FAIL 04: PYTHON</h2>
-                        <div class="note-box">
-                            <pre class="code-block">
-import math
-print(math.sqrt(16)) # Output: 4.0
-print(math.pi)       # Output: 3.142...
-                            </pre>
-                        </div>
-                    </div>
-                </div>
+        <div id="file-3" class="file-content hidden">
+            <h2 class="file-title">MODUL 3.0: SEARCHING & SORTING</h2>
+            <div class="note-box">
+                <h4 class="section-header">3.1 ALGORITMA CARIAN (SEARCH)</h4>
+                <ul>
+                    <li><strong>Linear Search:</strong> Carian satu persatu (Brute force).</li>
+                    <li><strong>Binary Search:</strong> Membelah senarai berurutan kepada dua bahagian untuk mempercepatkan carian.</li>
+                </ul>
+                <h4 class="section-header">3.2 ALGORITMA ISIH (SORT)</h4>
+                <ul>
+                    <li><strong>Bubble Sort:</strong> Pertukaran unsur bersebelahan (Pairwise comparison).</li>
+                    <li><strong>Bucket Sort:</strong> Pengasingan ke dalam baldi berdasarkan nilai julat tertentu.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="file-4" class="file-content hidden">
+            <h2 class="file-title">MODUL 4.0: PANGKALAN DATA DAN SQL</h2>
+            <div class="note-box">
+                <h4 class="section-header">4.1.1 DEFINISI & PENGGUNAAN</h4>
+                <p><strong>Pangkalan Data Hubungan:</strong> Struktur data dalam bentuk jadual yang saling berkaitan menggunakan kunci.</p>
+                
+                <h4 class="section-header">4.1.2 ENTITI & ATRIBUT</h4>
+                <p><strong>Entiti:</strong> Objek (Contoh: MURID, GURU).</p>
+                <p><strong>Atribut:</strong> Sifat entiti (ID_Murid, Nama_Murid).</p>
+                
+                <h4 class="section-header">4.1.3 KEKUNCI (KEYS)</h4>
+                <ul>
+                    <li><strong>Kekunci Utama:</strong> Atribut unik yang mengenal pasti rekod secara mutlak.</li>
+                    <li><strong>Kekunci Asing:</strong> Atribut yang menghubungkan satu jadual dengan jadual yang lain.</li>
+                </ul>
+
+                <h4 class="section-header">4.1.4 PERINTAH SQL (Data Manipulation Language)</h4>
+                <p>Digunakan untuk menguruskan rekod dalam jadual:</p>
+                <pre class="code-block" style="background: #1e1e1e; padding: 15px; border-radius: 8px; color: #00ff00;">
+-- 1. Memaparkan data
+SELECT * FROM Murid;
+
+-- 2. Menambah data baru
+INSERT INTO Murid (ID, Nama) VALUES ('M101', 'Ahmad');
+
+-- 3. Mengemas kini data
+UPDATE Murid SET Nama = 'Ali' WHERE ID = 'M101';
+
+-- 4. Memadam data
+DELETE FROM Murid WHERE ID = 'M101';
+                </pre>
+            </div>
+        </div>
+    </div>
+</section>
             </section>
 
             <section id="video" class="panel">
@@ -354,7 +280,7 @@ print(math.pi)       # Output: 3.142...
                             <div class="icon-overlay">▶</div>
                         </div>
                         <div class="video-info">
-                            <span class="tag" style="background:var(--neon-green); color:black;">BAB 5 (BARU)</span>
+                            <span class="tag" style="background:var(--neon-green); color:black;">BAB UTAMA (BARU)</span>
                             <h3>PANGKALAN DATA & SQL</h3>
                             <button class="launch-btn" style="margin-top:10px;" onclick="window.open('https://youtu.be/svMtTifveMI?si=ISrelULemRdfF1Fz', '_blank')">
                                 TONTON DI YOUTUBE >>
@@ -364,13 +290,13 @@ print(math.pi)       # Output: 3.142...
 
                     <div class="video-card">
                         <div class="video-frame">
-                            <img src="https://img.youtube.com/vi/S_C7zfknyag/hqdefault.jpg" class="preview-bg" alt="Bab 1">
+                            <img src="https://img.youtube.com/vi/saA8_CHvtqY/maxresdefault.jpg" class="preview-bg" alt="SQL Tutorial">
                             <div class="icon-overlay">▶</div>
                         </div>
                         <div class="video-info">
-                            <span class="tag">BAB 1</span>
-                            <h3>PEMIKIRAN KOMPUTASIONAL</h3>
-                            <button class="launch-btn" style="margin-top:10px;" onclick="window.open('https://www.youtube.com/watch?v=S_C7zfknyag', '_blank')">
+                            <span class="tag">VIDEO 1</span>
+                            <h3>Pangkalan Data & SQL V2</h3>
+                            <button class="launch-btn" style="margin-top:10px;" onclick="window.open('https://youtu.be/saA8_CHvtqY?si=WE9WCXw5phiiFSBu', '_blank')">
                                 TONTON DI YOUTUBE >>
                             </button>
                         </div>
@@ -378,13 +304,13 @@ print(math.pi)       # Output: 3.142...
 
                     <div class="video-card">
                         <div class="video-frame">
-                            <img src="https://img.youtube.com/vi/sMOZf4GN3oc/hqdefault.jpg" class="preview-bg" alt="Bab 2">
+                            <img src="https://img.youtube.com/vi/drIBI5HnfPY/maxresdefault.jpg" class="preview-bg" alt="Bab 2">
                             <div class="icon-overlay">▶</div>
                         </div>
                         <div class="video-info">
-                            <span class="tag">BAB 2</span>
-                            <h3>KRIPTOGRAFI</h3>
-                            <button class="launch-btn" style="margin-top:10px;" onclick="window.open('https://www.youtube.com/watch?v=sMOZf4GN3oc', '_blank')">
+                            <span class="tag">VIDEO 2</span>
+                            <h3>Pangkalan Data Dan SQL V3</h3>
+                            <button class="launch-btn" style="margin-top:10px;" onclick="window.open('https://youtu.be/drIBI5HnfPY?si=UPFdRBZKFGtfmE31', '_blank')">
                                 TONTON DI YOUTUBE >>
                             </button>
                         </div>
@@ -392,13 +318,13 @@ print(math.pi)       # Output: 3.142...
 
                     <div class="video-card">
                         <div class="video-frame">
-                            <img src="https://img.youtube.com/vi/NFetSCJcnKQ/hqdefault.jpg" class="preview-bg" alt="Bab 3">
+                            <img src="https://img.youtube.com/vi/y6xOYn9YKI0/maxresdefault.jpg" class="preview-bg" alt="Bab 3">
                             <div class="icon-overlay">▶</div>
                         </div>
                         <div class="video-info">
-                            <span class="tag">BAB 3</span>
-                            <h3>ALGORITMA SEARCH & SORT</h3>
-                            <button class="launch-btn" style="margin-top:10px;" onclick="window.open('https://www.youtube.com/watch?v=NFetSCJcnKQ', '_blank')">
+                            <span class="tag">VIDEO 3</span>
+                            <h3>ENTITI DAN ANTRIBUT</h3>
+                            <button class="launch-btn" style="margin-top:10px;" onclick="window.open('https://youtu.be/y6xOYn9YKI0?si=0pIygFf6hQl6FtDs', '_blank')">
                                 TONTON DI YOUTUBE >>
                             </button>
                         </div>
@@ -406,13 +332,13 @@ print(math.pi)       # Output: 3.142...
 
                     <div class="video-card">
                         <div class="video-frame">
-                            <img src="https://img.youtube.com/vi/Z1Yd7upQsXY/hqdefault.jpg" class="preview-bg" alt="Bab 4">
+                            <img src="https://img.youtube.com/vi/ynpmaLpy2jY/maxresdefault.jpg" class="preview-bg" alt="Bab 4">
                             <div class="icon-overlay">▶</div>
                         </div>
                         <div class="video-info">
-                            <span class="tag">BAB 4</span>
-                            <h3>ASAS PYTHON</h3>
-                            <button class="launch-btn" style="margin-top:10px;" onclick="window.open('https://www.youtube.com/watch?v=Z1Yd7upQsXY', '_blank')">
+                            <span class="tag">VIDEO 4</span>
+                            <h3>PENGGUNAAN PERNYATAAN SQL</h3>
+                            <button class="launch-btn" style="margin-top:10px;" onclick="window.open('https://youtu.be/ynpmaLpy2jY?si=i2FjqlzOYXKTT_wJ', '_blank')">
                                 TONTON DI YOUTUBE >>
                             </button>
                         </div>
@@ -450,8 +376,8 @@ print(math.pi)       # Output: 3.142...
                             <span class="tag" style="background:#00f3ff; color:black;">MISI 01</span>
                             <h3>PENGINTIPAN SIBER</h3>
                             <p class="mission-desc">Cari maklumat rahsia dalam pangkalan data musuh.</p>
-                            <button class="launch-btn" onclick="window.open('#', '_blank')">
-                                BUKA FAIL >>
+                            <button class="launch-btn" onclick="window.open('https://quiz.zep.us/en/play/GpgEkK', '_blank')">
+                                [ KLIK UNTUK BERJUANG ] >>
                             </button>
                         </div>
                     </div>
@@ -465,8 +391,8 @@ print(math.pi)       # Output: 3.142...
                             <span class="tag" style="background:#00f3ff; color:black;">MISI 02</span>
                             <h3>PENYAHKOD RAHSIA</h3>
                             <p class="mission-desc">Dekripsi kod rahsia menggunakan teknik Caesar Cipher.</p>
-                            <button class="launch-btn" onclick="window.open('#', '_blank')">
-                                BUKA FAIL >>
+                            <button class="launch-btn" onclick="window.open('https://quiz.zep.us/en/play/lpvO5o', '_blank')">
+                                 [ BERTINDAK SEGERA ]>>
                             </button>
                         </div>
                     </div>
@@ -480,8 +406,8 @@ print(math.pi)       # Output: 3.142...
                             <span class="tag" style="background:#00f3ff; color:black;">MISI 03</span>
                             <h3>SERANGAN VIRUS</h3>
                             <p class="mission-desc">Hentikan penyebaran virus sebelum sistem lumpuh.</p>
-                            <button class="launch-btn" onclick="window.open('#', '_blank')">
-                                BUKA FAIL >>
+                            <button class="launch-btn" onclick="window.open('https://quiz.zep.us/en/play/xELPq0', '_blank')">
+                                [ KLIK SEGERA ] >>
                             </button>
                         </div>
                     </div>
@@ -498,21 +424,110 @@ print(math.pi)       # Output: 3.142...
                 </div>
             </section>
 
-            <section id="arena" class="panel">
-                <div class="section-title"><h2>SIMULASI TEMPUR (10 SOALAN)</h2><div class="line"></div></div>
-                <div class="quiz-scroll-area">
-                    <div class="quiz-box"><div class="q-header">SOALAN 01</div><h3>Antara berikut, yang manakah teknik isihan?</h3><div class="options"><button onclick="check(this, true)">Bubble Sort</button><button onclick="check(this, false)">Linear Search</button><button onclick="check(this, false)">Binary Code</button></div></div>
-                    <div class="quiz-box"><div class="q-header">SOALAN 02</div><h3>Tujuan utama Kriptografi?</h3><div class="options"><button onclick="check(this, false)">Padam data</button><button onclick="check(this, true)">Kerahsiaan</button><button onclick="check(this, false)">Laju PC</button></div></div>
-                    <div class="quiz-box"><div class="q-header">SOALAN 03</div><h3>Simbol komen Python?</h3><div class="options"><button onclick="check(this, false)">//</button><button onclick="check(this, false)">/**/</button><button onclick="check(this, true)">#</button></div></div>
-                    <div class="quiz-box"><div class="q-header">SOALAN 04</div><h3>Output math.pow(2,3)?</h3><div class="options"><button onclick="check(this, true)">8.0</button><button onclick="check(this, false)">6.0</button><button onclick="check(this, false)">9.0</button></div></div>
-                    <div class="quiz-box"><div class="q-header">SOALAN 05</div><h3>Syarat Binary Search?</h3><div class="options"><button onclick="check(this, false)">Rawak</button><button onclick="check(this, true)">Diisih (Sorted)</button><button onclick="check(this, false)">Teks</button></div></div>
-                    <div class="quiz-box"><div class="q-header">SOALAN 06</div><h3>Mengecam ciri persamaan?</h3><div class="options"><button onclick="check(this, false)">Leraian</button><button onclick="check(this, false)">Peniskalaan</button><button onclick="check(this, true)">Corak</button></div></div>
-                    <div class="quiz-box"><div class="q-header">SOALAN 07</div><h3>Output print(10 % 3)?</h3><div class="options"><button onclick="check(this, true)">1</button><button onclick="check(this, false)">3</button><button onclick="check(this, false)">3.33</button></div></div>
-                    <div class="quiz-box"><div class="q-header">SOALAN 08</div><h3>Caesar Shift 1, A jadi?</h3><div class="options"><button onclick="check(this, false)">Z</button><button onclick="check(this, true)">B</button><button onclick="check(this, false)">C</button></div></div>
-                    <div class="quiz-box"><div class="q-header">SOALAN 09</div><h3>1 Byte bersamaan?</h3><div class="options"><button onclick="check(this, false)">4 Bit</button><button onclick="check(this, true)">8 Bit</button><button onclick="check(this, false)">16 Bit</button></div></div>
-                    <div class="quiz-box"><div class="q-header">SOALAN 10</div><h3>Fungsi punca kuasa dua?</h3><div class="options"><button onclick="check(this, true)">math.sqrt()</button><button onclick="check(this, false)">square()</button><button onclick="check(this, false)">pow()</button></div></div>
-                </div>
-            </section>
+           <section id="arena" class="panel">
+    <div class="section-title"><h2>SIMULASI TEMPUR: PANGKALAN DATA (10 SOALAN)</h2><div class="line"></div></div>
+    <div class="quiz-scroll-area">
+        <div class="quiz-box">
+            <div class="q-header">SOALAN 01</div>
+            <h3>Apakah maksud Pangkalan Data?</h3>
+            <div class="options">
+                <button onclick="check(this, true)">Koleksi data yang saling berhubungan</button>
+                <button onclick="check(this, false)">Sekumpulan fail teks rawak</button>
+                <button onclick="check(this, false)">Aplikasi untuk melukis jadual</button>
+            </div>
+        </div>
+
+        <div class="quiz-box">
+            <div class="q-header">SOALAN 02</div>
+            <h3>Kekunci yang unik untuk mengenal pasti rekod ialah?</h3>
+            <div class="options">
+                <button onclick="check(this, false)">Kekunci Asing</button>
+                <button onclick="check(this, true)">Kekunci Primer</button>
+                <button onclick="check(this, false)">Kekunci Pendua</button>
+            </div>
+        </div>
+
+        <div class="quiz-box">
+            <div class="q-header">SOALAN 03</div>
+            <h3>Arahan SQL untuk mengambil data dari jadual?</h3>
+            <div class="options">
+                <button onclick="check(this, false)">GET</button>
+                <button onclick="check(this, false)">EXTRACT</button>
+                <button onclick="check(this, true)">SELECT</button>
+            </div>
+        </div>
+
+        <div class="quiz-box">
+            <div class="q-header">SOALAN 04</div>
+            <h3>Simbol '*' dalam arahan SELECT bermaksud?</h3>
+            <div class="options">
+                <button onclick="check(this, true)">Semua medan (field)</button>
+                <button onclick="check(this, false)">Satu baris sahaja</button>
+                <button onclick="check(this, false)">Data yang penting sahaja</button>
+            </div>
+        </div>
+
+        <div class="quiz-box">
+            <div class="q-header">SOALAN 05</div>
+            <h3>Antara berikut, yang manakah perisian DBMS?</h3>
+            <div class="options">
+                <button onclick="check(this, false)">Notepad++</button>
+                <button onclick="check(this, true)">MySQL / MS Access</button>
+                <button onclick="check(this, false)">Adobe Photoshop</button>
+            </div>
+        </div>
+
+        <div class="quiz-box">
+            <div class="q-header">SOALAN 06</div>
+            <h3>Arahan SQL untuk menyusun data secara menaik/menurun?</h3>
+            <div class="options">
+                <button onclick="check(this, false)">GROUP BY</button>
+                <button onclick="check(this, true)">ORDER BY</button>
+                <button onclick="check(this, false)">ARRANGE BY</button>
+            </div>
+        </div>
+
+        <div class="quiz-box">
+            <div class="q-header">SOALAN 07</div>
+            <h3>Kekunci Primer dalam jadual lain dipanggil sebagai?</h3>
+            <div class="options">
+                <button onclick="check(this, true)">Kekunci Asing</button>
+                <button onclick="check(this, false)">Kekunci Utama</button>
+                <button onclick="check(this, false)">Kekunci Kedua</button>
+            </div>
+        </div>
+
+        <div class="quiz-box">
+            <div class="q-header">SOALAN 08</div>
+            <h3>Fungsi 'WHERE' dalam arahan SQL adalah untuk?</h3>
+            <div class="options">
+                <button onclick="check(this, false)">Menentukan nama jadual</button>
+                <button onclick="check(this, true)">Meletakkan kriteria/syarat</button>
+                <button onclick="check(this, false)">Menambah rekod baru</button>
+            </div>
+        </div>
+
+        <div class="quiz-box">
+            <div class="q-header">SOALAN 09</div>
+            <h3>Proses mengurangkan lewah (redundancy) data ialah?</h3>
+            <div class="options">
+                <button onclick="check(this, false)">Integrasi</button>
+                <button onclick="check(this, false)">Manipulasi</button>
+                <button onclick="check(this, true)">Normalisasi</button>
+            </div>
+        </div>
+
+        <div class="quiz-box">
+            <div class="q-header">SOALAN 10</div>
+            <h3>Jenis data untuk menyimpan Nama Pelajar ialah?</h3>
+            <div class="options">
+                <button onclick="check(this, true)">VARCHAR / TEXT</button>
+                <button onclick="check(this, false)">INTEGER</button>
+                <button onclick="check(this, false)">BOOLEAN</button>
+            </div>
+        </div>
+    </div>
+</section>
 
             <section id="notepad" class="panel">
                 <div class="section-title"><h2>MEMO PERIBADI AGEN</h2><div class="line"></div></div>
@@ -541,6 +556,7 @@ print(math.pi)       # Output: 3.142...
 
         </main>
     </div>
+
 
     <script>
         // --- 1. SETUP AWAL (ON LOAD) ---
