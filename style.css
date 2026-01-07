@@ -353,23 +353,3 @@ body {
     .notepad-column { height: 300px; }
     .logo-glitch { font-size: 3rem; }
 }
-/* Update pada Glass Container untuk kesan muncul */
-.glass-container {
-    transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-    transform: translate(-50%, -50%) scale(0.8); /* Mula dengan scale kecil */
-}
-
-/* Feedback Visual bila butang ditekan (Sync dengan SFX) */
-.nav-item:active, button:active {
-    transform: scale(0.9);
-    filter: brightness(1.5) hue-rotate(45deg);
-}
-
-/* Kesan Flicker pada skrin MATA */
-.scanlines {
-    pointer-events: none;
-    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
-                linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-    background-size: 100% 2px, 3px 100%;
-    z-index: 10;
-}
